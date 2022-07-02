@@ -1,11 +1,11 @@
 CC	= gcc
 CFLAGS	= -Wall -Werror -Wextra
-NAME	= libftprintf.a
 SRCS	= ft_printf.c / ft_tools.c /ft_put_type.c
 OBJS	= $(SRCS:.c=.o)
-all:	$(NAME)
-$(NAME)	= $(OBJS)
+NAME	= libftprintf.a
+$(NAME)	: $(OBJS)
 	ar rcs $(NAME) $(OBJS)
+all:	$(NAME)
 RM	= /bin/bash/rm -rf
 clean:
 	$(RM) $(OBJS)
@@ -13,4 +13,4 @@ fclean: clean
 	$(RM) $(NAME)
 re:	fclean
 	$(NAME)
-.PHONY	= all clean fclean re
+.PHONY	: all clean fclean re
