@@ -1,13 +1,13 @@
 #include "ft_printf.h"
 
-int	len_base(unsigned int num, int base)
+int	len_base(unsigned int nbr, int base)
 {
 	int	out;
 
 	out = 1;
-	while (num / base)
+	while (nbr / base)
 	{
-		num = num / base;
+		nbr = nbr / base;
 		out++;
 	}
 	return (out);
